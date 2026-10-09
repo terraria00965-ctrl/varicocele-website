@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Здоровье мужчин: варикоцеле</title>
+<style>
+:root{--primary:#0d9488;--primary-dark:#0f766e;--primary-deep:#115e59;--accent:#0284c7;--bg:#f0fdfa;--card:#fff;--text:#134e4a;--muted:#64748b;--border:#ccfbf1;--ok:#16a34a;--bad:#dc2626;--shadow:0 10px 40px rgba(13,148,136,.12);--radius:20px}
+*{margin:0;padding:0;box-sizing:border-box}
+html{font-size:18px;scroll-behavior:smooth}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:linear-gradient(180deg,#f0fdfa,#e0f2fe);color:var(--text);line-height:1.75}
+header{background:linear-gradient(135deg,#0f766e,#0e7490 55%,#0369a1);color:#fff;text-align:center;padding:72px 20px 88px;position:relative;overflow:hidden}
+header h1{font-size:clamp(2rem,5vw,3rem);font-weight:800;margin-bottom:14px;letter-spacing:-.03em}
+header p{font-size:1.15rem;opacity:.95;max-width:640px;margin:0 auto}
+nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(10px);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:4px;max-width:1100px;margin:0 auto;padding:8px 10px}
+nav a{display:block;padding:12px 14px;text-decoration:none;color:var(--text);font-weight:600;font-size:.95rem;border-radius:12px}
+nav a:hover{background:var(--border);color:var(--primary-dark)}
+main{max-width:920px;margin:0 auto;padding:36px 16px 80px}
+section{background:var(--card);border-radius:var(--radius);padding:36px 32px;margin-bottom:28px;box-shadow:var(--shadow);border:1px solid rgba(13,148,136,.08)}
+section h2{font-size:1.55rem;color:var(--primary-deep);margin-bottom:18px;padding-bottom:12px;border-bottom:3px solid var(--border)}
+h3{font-size:1.2rem;color:var(--primary-dark);margin:24px 0 12px}
+p{margin-bottom:12px;color:var(--muted);font-size:1.05rem}
+ul,ol{margin:10px 0 14px 22px;color:var(--muted);font-size:1.05rem}
+li{margin-bottom:8px}strong{color:var(--text)}
+.img-block{text-align:center;margin:24px 0}
+.img-block img{max-width:100%;height:auto;border-radius:16px;box-shadow:0 8px 28px rgba(0,0,0,.1)}
+.img-caption{margin-top:10px;font-size:.92rem;color:var(--muted);font-style:italic}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:14px;margin:18px 0}
+.card{background:linear-gradient(160deg,#ccfbf1,#e0f2fe);border-radius:16px;padding:18px;border-left:4px solid var(--primary)}
+.card h4{color:var(--primary-deep);margin-bottom:8px;font-size:1.05rem}.card p{margin:0;font-size:.98rem}
+.grades{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:16px 0}
+.grade{text-align:center;border:2px solid var(--border);border-radius:16px;padding:18px 14px;background:#fff}
+.grade-num{font-size:2rem;font-weight:800;color:var(--primary)}.grade h4{margin:6px 0 8px;color:var(--primary-deep)}
+.highlight{background:linear-gradient(135deg,#ccfbf1,#e0f2fe);border-left:5px solid var(--accent);border-radius:14px;padding:16px 18px;margin:18px 0}
+.highlight p{margin:0;color:var(--text);font-size:1.05rem}
+.facts-list{list-style:none;margin-left:0}
+.facts-list li{background:#f0fdfa;border-radius:12px;padding:12px 14px;margin-bottom:8px}
+.doctors-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin:20px 0}
+.doctor-photo{border-radius:16px;overflow:hidden;background:#f8fafc;box-shadow:0 4px 16px rgba(0,0,0,.08);text-align:center}
+.doctor-photo img{width:100%;height:200px;object-fit:cover;display:block}
+.doctor-photo p{padding:10px;margin:0;font-weight:600;color:var(--text);font-size:.95rem}
+.quiz-question{background:#f8fafc;border:1px solid #e2e8f0;border-radius:16px;padding:20px;margin-bottom:16px}
+.quiz-question h4{color:var(--primary-deep);margin-bottom:12px;font-size:1.08rem}
+.quiz-option{position:relative;overflow:hidden;display:block;background:#fff;border:2px solid #e2e8f0;border-radius:12px;padding:12px 14px;margin-bottom:8px;cursor:pointer}
+.quiz-option:hover{border-color:var(--primary);background:#f0fdfa}
+.quiz-option.selected{border-color:var(--primary);background:#ccfbf1}
+.quiz-option.correct{border-color:var(--ok);background:#dcfce7}
+.quiz-option.wrong{border-color:var(--bad);background:#fee2e2}
+.quiz-option.disabled{pointer-events:none}
+.quiz-bar{position:absolute;left:0;top:0;height:100%;background:rgba(13,148,136,.12);transition:width .6s ease;border-radius:10px}
+.quiz-content{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:1rem}
+.quiz-percent{font-weight:700;color:var(--primary-deep);min-width:42px;text-align:right}
+.quiz-votes{font-size:.85rem;color:var(--muted);background:#fff;border:1px solid #e2e8f0;border-radius:999px;padding:2px 8px}
+.btn{display:inline-block;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border:none;border-radius:999px;padding:14px 28px;font-size:1.05rem;font-weight:700;cursor:pointer;box-shadow:0 6px 18px rgba(13,148,136,.28)}
+.btn:hover{transform:translateY(-2px)}.btn:disabled{background:#94a3b8;cursor:not-allowed}
+.quiz-result{display:none;margin-top:18px;text-align:center;background:linear-gradient(135deg,#ccfbf1,#e0f2fe);border-radius:16px;padding:22px}
+.quiz-score{font-size:2.4rem;font-weight:800;color:var(--primary-dark);margin:8px 0}
+.sheets-box{margin-top:18px;padding:16px;border-radius:14px;background:#fff;border:1px dashed var(--primary);font-size:.98rem;text-align:left}
+.comment-form{display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.comment-form input,.comment-form textarea{border:2px solid #e2e8f0;border-radius:12px;padding:12px 14px;font:inherit;font-size:1rem;background:#f8fafc}
+.comment{background:#f0fdfa;border-left:4px solid var(--primary);border-radius:12px;padding:14px;margin-bottom:10px}
+.comment-header{display:flex;justify-content:space-between;margin-bottom:6px}
+.comment-author{font-weight:700;color:var(--primary-deep)}.comment-date{font-size:.85rem;color:var(--muted)}
+.no-comments{text-align:center;color:var(--muted);padding:20px;background:#f8fafc;border-radius:12px;font-style:italic}
+footer{background:linear-gradient(135deg,#115e59,#0e7490);color:rgba(255,255,255,.92);text-align:center;padding:28px 16px;font-size:1rem}
+@media(max-width:640px){html{font-size:16px}section{padding:22px 16px}}
+</style>
+</head>
+<body>
+<header>
+<h1>Здоровье мужчин: варикоцеле</h1>
+<p>Как расширенные вены возле яичка влияют на здоровье парней и подростков</p>
+</header>
+<nav><ul>
+<li><a href="#what">Что это</a></li>
+<li><a href="#causes">Причины</a></li>
+<li><a href="#symptoms">Симптомы</a></li>
+<li><a href="#diagnosis">Диагностика</a></li>
+<li><a href="#treatment">Лечение</a></li>
+<li><a href="#impact">Влияние</a></li>
+<li><a href="#facts">Факты</a></li>
+<li><a href="#quiz">Опрос</a></li>
+<li><a href="#comments">Комментарии</a></li>
+<li><a href="#sources">Источники</a></li>
+</ul></nav>
+<main>
+<section id="what">
+<h2>🔬 Что такое варикоцеле</h2>
+<p><strong>Варикоцеле</strong> — это когда вены около яичка расширяются и становятся извитыми. По ним обычно кровь уходит от яичка, а тут получается застой.</p>
+<p>Если коротко — это варикоз вен в мошонке. Встречается примерно у <strong>15% подростков и молодых парней</strong>. Если его не заметить вовремя, потом могут быть проблемы с зачатием.</p>
+<div class="img-block"><img src="schema.jpg" alt="Модель варикоцеле: слева норма, справа расширенные вены"><p class="img-caption">Модель (схема): слева — норма, справа — варикоцеле</p></div>
+<div class="highlight"><p>В 80–90% случаев оно появляется <strong>слева</strong>. Так получается из-за строения сосудов: левая вена входит в почечную под прямым углом, и давление там выше.</p></div>
+</section>
+<section id="causes">
+<h2>🧬 Причины и механизм</h2>
+<div class="cards">
+<div class="card"><h4>Слабые клапаны в венах</h4><p>В венах есть клапаны, чтобы кровь не текла обратно. Если они плохо работают, кровь застаивается и вены растягиваются.</p></div>
+<div class="card"><h4>Особенности строения</h4><p>Левая вена от яичка входит в почечную под углом 90°. Из-за этого давление выше, чем справа.</p></div>
+<div class="card"><h4>Слабые стенки вен</h4><p>У некоторых людей стенки вен от природы более мягкие и легче растягиваются.</p></div>
+<div class="card"><h4>Высокое давление в животе</h4><p>Если часто поднимать тяжести или мучают запоры, давление внутри растёт — это тоже может помочь появиться варикоцеле.</p></div>
+</div>
+<h3>Как это происходит</h3>
+<p>Обычно кровь от яичка идёт вверх. Клапаны не дают ей течь назад. Если клапаны не справляются, кровь течёт обратно, вены раздуваются и становятся извилистыми.</p>
+<p>Из-за этого в мошонке становится теплее, питание тканей ухудшается, и сперматозоиды могут хуже образовываться.</p>
+</section>
+<section id="symptoms">
+<h2>📋 Симптомы и степени</h2>
+<p>Часто варикоцеле <strong>ничем не мешает</strong> и его находят случайно. Если симптомы есть:</p>
+<ul>
+<li>тяжесть или неприятные ощущения в мошонке;</li>
+<li>тянущая боль (сильнее после спорта или долгого стояния);</li>
+<li>вены, которые видно или можно нащупать («мешок с червями»);</li>
+<li>яичко с этой стороны становится меньше.</li>
+</ul>
+<h3>Степени</h3>
+<div class="grades">
+<div class="grade"><div class="grade-num">I</div><h4>Первая</h4><p>Вены находят только при натуживании.</p></div>
+<div class="grade"><div class="grade-num">II</div><h4>Вторая</h4><p>Вены можно нащупать стоя, но не видно глазами.</p></div>
+<div class="grade"><div class="grade-num">III</div><h4>Третья</h4><p>Вены хорошо видно, часто есть боль.</p></div>
+</div>
+</section>
+<section id="diagnosis">
+<h2>🩺 Диагностика</h2>
+<p>Сначала врач осматривает, потом обычно делают УЗИ.</p>
+<div class="doctors-gallery">
+<div class="doctor-photo"><img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=400&h=400&fit=crop&crop=faces" alt="Врач" loading="lazy"><p>Осмотр врача</p></div>
+<div class="doctor-photo"><img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=400&h=400&fit=crop&crop=faces" alt="Врач" loading="lazy"><p>Консультация</p></div>
+<div class="doctor-photo"><img src="https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=400&h=400&fit=crop&crop=faces" alt="Приём" loading="lazy"><p>Приём</p></div>
+</div>
+<ul>
+<li><strong>Осмотр</strong> — стоя и лёжа, с натуживанием.</li>
+<li><strong>УЗИ с допплером</strong> — лучший способ проверить вены и ток крови.</li>
+<li><strong>Спермограмма</strong> — если думают про влияние на зачатие.</li>
+</ul>
+</section>
+<section id="treatment">
+<h2>💊 Лечение</h2>
+<p>Не всегда нужна операция. Врач смотрит по ситуации.</p>
+<ul>
+<li>если болит и мешает жить;</li>
+<li>если яичко стало меньше;</li>
+<li>если анализы спермы плохие;</li>
+<li>если уже третья степень.</li>
+</ul>
+<div class="cards">
+<div class="card"><h4>Наблюдение</h4><p>Если ничего не болит — достаточно проверяться.</p></div>
+<div class="card"><h4>Операция Мармара</h4><p>Лучший вариант: маленький разрез, меньше осложнений.</p></div>
+<div class="card"><h4>Лапароскопия</h4><p>Через маленькие проколы, с камерой.</p></div>
+<div class="card"><h4>Эмболизация</h4><p>Через сосуд закрывают расширенные вены.</p></div>
+</div>
+</section>
+<section id="impact">
+<h2>⚠️ Влияние на организм</h2>
+<ul>
+<li><strong>Становится теплее</strong> — яичкам нужна чуть более прохладная температура.</li>
+<li><strong>Хуже кислород</strong> — ткани получают меньше питания.</li>
+<li><strong>Повреждение клеток</strong> — может страдать ДНК сперматозоидов.</li>
+<li><strong>Гормоны</strong> — иногда падает тестостерон.</li>
+</ul>
+<div class="highlight"><p>Варикоцеле — частая причина проблем с зачатием, которую можно убрать. После операции у многих анализы улучшаются.</p></div>
+</section>
+<section id="facts">
+<h2>💡 Интересные факты</h2>
+<ul class="facts-list">
+<li>Чаще появляется в подростковом возрасте.</li>
+<li>Есть примерно у 15% подростков и молодых парней, но многие ничего не чувствуют.</li>
+<li>Справа бывает реже (3–8%).</li>
+<li>Вены описывают как «мешок с червями».</li>
+<li>Операцию Мармара назвали в честь врача Джоэля Мармара.</li>
+</ul>
+</section>
+<section id="quiz">
+<h2>📊 Опрос и проверка знаний</h2>
+<p>Пройди тест. После ответов увидишь статистику и сколько человек прошли опрос.</p>
+<div class="quiz-question" data-q="0" data-correct="1"><h4>1. У какого процента подростков и молодых парней встречается варикоцеле?</h4>
+<div class="quiz-option" data-opt="0"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Около 5%</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="1"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Около 15%</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="2"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Около 40%</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+</div>
+<div class="quiz-question" data-q="1" data-correct="0"><h4>2. На какой стороне чаще всего развивается варикоцеле?</h4>
+<div class="quiz-option" data-opt="0"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Слева (80–90%)</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="1"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Справа</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="2"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Одинаково часто</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+</div>
+<div class="quiz-question" data-q="2" data-correct="2"><h4>3. Какой метод — лучший для диагностики?</h4>
+<div class="quiz-option" data-opt="0"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Только осмотр</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="1"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>МРТ</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="2"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>УЗИ с допплером</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+</div>
+<div class="quiz-question" data-q="3" data-correct="1"><h4>4. Какая операция считается лучшей?</h4>
+<div class="quiz-option" data-opt="0"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Операция Иваниссевича</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="1"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Операция Мармара</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="2"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Только таблетки</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+</div>
+<div class="quiz-question" data-q="4" data-correct="0"><h4>5. Варикоцеле часто протекает...</h4>
+<div class="quiz-option" data-opt="0"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Бессимптомно</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="1"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>С сильной болью всегда</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="2"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Только у взрослых мужчин</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+</div>
+<div class="quiz-question" data-q="5" data-correct="2"><h4>6. Почему варикоцеле может влиять на фертильность?</h4>
+<div class="quiz-option" data-opt="0"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Из-за низкого давления</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="1"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Из-за большего числа сперматозоидов</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+<div class="quiz-option" data-opt="2"><div class="quiz-bar" style="width:0%"></div><div class="quiz-content"><span>Из-за тепла и окислительного стресса</span><span><span class="quiz-votes"></span> <span class="quiz-percent"></span></span></div></div>
+</div>
+<button class="btn" id="quiz-submit">Показать результаты</button>
+<div class="quiz-result" id="quiz-result">
+<h3>Твой результат</h3>
+<div class="quiz-score" id="quiz-score">0 / 6</div>
+<p id="quiz-feedback"></p>
+<p style="margin-top:12px;font-weight:700;color:var(--primary-deep)">Всего опрос прошли: <span id="quiz-participants">0</span> чел.</p>
+<div class="sheets-box"><strong>Google Sheets:</strong> результаты можно собирать в таблицу. Инструкция — в файле <code>GOOGLE_SHEETS.md</code> на GitHub. После настройки вставь URL скрипта в код сайта (переменная <code>GOOGLE_SCRIPT_URL</code>).</div>
+</div>
+</section>
+<section id="comments">
+<h2>💬 Комментарии</h2>
+<p>Можешь написать отзыв или вопрос.</p>
+<form class="comment-form" id="comment-form">
+<input type="text" id="comment-name" placeholder="Твоё имя" required maxlength="40">
+<textarea id="comment-text" placeholder="Комментарий..." required maxlength="500"></textarea>
+<button class="btn" type="submit">Отправить</button>
+</form>
+<div id="comments-list"></div>
+</section>
+<section id="sources">
+<h2>📚 Источники</h2>
+<ol>
+<li>Обзорные материалы по урологии и андрологии (варикоцеле).</li>
+<li>Wikipedia / Cleveland Clinic / BMJ Best Practice.</li>
+<li>Схема: Blausen Medical (Wikimedia Commons).</li>
+</ol>
+<p style="margin-top:14px;font-size:.95rem">Учебный материал. При симптомах обратись к урологу.</p>
+</section>
+</main>
+<footer><p>Здоровье мужчин · Варикоцеле · 2026</p></footer>
+<script>
+const QUIZ_KEY='varicocele_quiz_votes_v4';
+const QUIZ_DONE_KEY='varicocele_quiz_done_v4';
+const PARTICIPANTS_KEY='varicocele_quiz_participants_v4';
+const COMMENTS_KEY='varicocele_comments_v4';
+const GOOGLE_SCRIPT_URL='';
+let votes=JSON.parse(localStorage.getItem(QUIZ_KEY)||'null')||[[8,42,11],[51,7,9],[12,6,48],[15,44,5],[49,8,6],[7,5,52]];
+let participants=parseInt(localStorage.getItem(PARTICIPANTS_KEY)||'61',10);
+let userAnswers=[null,null,null,null,null,null];
+let quizDone=localStorage.getItem(QUIZ_DONE_KEY)==='true';
+const questions=document.querySelectorAll('.quiz-question');
+const submitBtn=document.getElementById('quiz-submit');
+const resultBox=document.getElementById('quiz-result');
+questions.forEach(q=>{q.querySelectorAll('.quiz-option').forEach(opt=>{opt.addEventListener('click',()=>{if(quizDone)return;q.querySelectorAll('.quiz-option').forEach(o=>o.classList.remove('selected'));opt.classList.add('selected');userAnswers[+q.dataset.q]=+opt.dataset.opt;});});});
+function showStats(){questions.forEach((q,qi)=>{const total=votes[qi].reduce((a,b)=>a+b,0);const correct=+q.dataset.correct;q.querySelectorAll('.quiz-option').forEach((opt,oi)=>{const percent=total?Math.round(votes[qi][oi]/total*100):0;opt.querySelector('.quiz-bar').style.width=percent+'%';opt.querySelector('.quiz-percent').textContent=percent+'%';opt.querySelector('.quiz-votes').textContent=votes[qi][oi]+' чел.';opt.classList.add('disabled');if(oi===correct)opt.classList.add('correct');else if(userAnswers[qi]===oi)opt.classList.add('wrong');});});}
+function sendToGoogleSheets(payload){if(!GOOGLE_SCRIPT_URL)return;try{fetch(GOOGLE_SCRIPT_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});}catch(e){}}
+submitBtn.addEventListener('click',()=>{if(userAnswers.some(a=>a===null)){alert('Ответь на все вопросы!');return;}userAnswers.forEach((ans,i)=>{votes[i][ans]++;});localStorage.setItem(QUIZ_KEY,JSON.stringify(votes));localStorage.setItem(QUIZ_DONE_KEY,'true');participants+=1;localStorage.setItem(PARTICIPANTS_KEY,String(participants));quizDone=true;let score=0;questions.forEach((q,i)=>{if(userAnswers[i]===+q.dataset.correct)score++;});document.getElementById('quiz-score').textContent=score+' / 6';document.getElementById('quiz-participants').textContent=participants;const fb=document.getElementById('quiz-feedback');if(score===6)fb.textContent='Отлично! Всё верно.';else if(score>=4)fb.textContent='Хороший результат.';else if(score>=2)fb.textContent='Неплохо, перечитай ключевые разделы.';else fb.textContent='Стоит ещё раз прочитать материал.';resultBox.style.display='block';submitBtn.style.display='none';showStats();sendToGoogleSheets({type:'quiz',score,answers:userAnswers,participants,date:new Date().toISOString()});});
+if(quizDone){submitBtn.style.display='none';resultBox.style.display='block';document.getElementById('quiz-score').textContent='Уже пройдено';document.getElementById('quiz-feedback').textContent='Ты уже отвечал. Ниже статистика.';document.getElementById('quiz-participants').textContent=participants;showStats();}
+const commentsList=document.getElementById('comments-list');
+function escapeHtml(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML;}
+function loadComments(){const comments=JSON.parse(localStorage.getItem(COMMENTS_KEY)||'[]');if(!comments.length){commentsList.innerHTML='<p class="no-comments">Пока нет комментариев</p>';return;}commentsList.innerHTML=comments.map(c=>'<div class="comment"><div class="comment-header"><span class="comment-author">'+escapeHtml(c.name)+'</span><span class="comment-date">'+c.date+'</span></div><p>'+escapeHtml(c.text)+'</p></div>').join('');}
+document.getElementById('comment-form').addEventListener('submit',e=>{e.preventDefault();const name=document.getElementById('comment-name').value.trim();const text=document.getElementById('comment-text').value.trim();if(!name||!text)return;const comments=JSON.parse(localStorage.getItem(COMMENTS_KEY)||'[]');const date=new Date().toLocaleString('ru-RU');comments.unshift({name,text,date});if(comments.length>50)comments.pop();localStorage.setItem(COMMENTS_KEY,JSON.stringify(comments));document.getElementById('comment-name').value='';document.getElementById('comment-text').value='';loadComments();sendToGoogleSheets({type:'comment',name,text,date});});
+loadComments();
+</script>
+</body>
+</html>
